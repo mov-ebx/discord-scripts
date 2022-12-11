@@ -62,7 +62,7 @@ while True:
         try:
             command = command.split(' ')[1]
             script = scripts[len(scripts)-i+int(command)]
-            print(f'\nSelected {script}\n')
+            print(f'\nSelected {script}')
             params = {"token":token}
             iparams = __import__('scripts.'+script[:-3], fromlist=[None]).params
             for param in iparams:

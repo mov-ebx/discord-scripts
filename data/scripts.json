@@ -1,4 +1,5 @@
 {
     "audit-bomb.py":"0.1",
-    "account-nuke.py":"0.2"
+    "account-nuke.py":"0.2",
+    "friend-invite.py":"0.3"
 }
