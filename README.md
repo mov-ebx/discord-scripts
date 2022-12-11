@@ -2,7 +2,7 @@
     <h1><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg"width="30px"><br>Discord Scripts/Multi-Tool</h1>
     <img src="https://i.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
     <h3>Collection of scripts written by me for the Discord platform</h3>
-    <h5>[WARNING]<br>While I did my best to make these undetectable, you may get terminated from Discord as this violates their ToS</h5>
+    <h5>[WARNING]<br>While I did my best to make these scripts undetectable, you may get terminated from Discord as these scripts violate their ToS</h5>
 
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-bluesvg)](https://www.python.org/download/releases/3.0/)
 [![GitHub license](https://img.shields.io/badge/license-GPL%202.0-green)](./LICENSE)

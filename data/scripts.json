@@ -1,5 +1,7 @@
 {
     "audit-bomb.py":"0.1",
     "account-nuke.py":"0.2",
-    "friend-invite.py":"0.3"
+    "friend-invite.py":"0.3",
+    "webhook-spammer.py":"0.4",
+    "webhook-deleter.py":"0.4"
 }
