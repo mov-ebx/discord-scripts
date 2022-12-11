@@ -8,13 +8,19 @@ VERS = requests.get('https://raw.githubusercontent.com/'+REPO+'/main/VERSION').t
 SCRIPTS = requests.get('https://raw.githubusercontent.com/'+REPO+'/main/data/scripts.json').json()
 
 # Title
-print('Launcher version 0.1b'+Fore.RED+'''
+def title():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+    print('Launcher version 0.2b'+Fore.RED+'''
   ____  _                       _   ____            _       _       
  |  _ \(_)___  ___ ___  _ __ __| | / ___|  ___ _ __(_)_ __ | |_ ___ 
  | | | | / __|/ __/ _ \| '__/ _` | \___ \ / __| '__| | '_ \| __/ __|
  | |_| | \__ \ (_| (_) | | | (_| |  ___) | (__| |  | | |_) | |_\__ \\
  |____/|_|___/\___\___/|_|  \__,_| |____/ \___|_|  |_| .__/ \__|___/
          ''' + Fore.RESET + 'created by ' + REPO.split('/')[0] + (' ' * (33 - len(REPO.split('/')[0]))) + Fore.RED + '|_|\n' + Fore.RESET)
+title()
 token = input("\nPlease enter your Discord token (this wont be shared or saved anywhere): ")
 
 # Auto updater
@@ -46,10 +52,13 @@ except IndexError:
 
 # Command line
 scripts = os.listdir(DIR+'/scripts/')
-print("Commands:\n - scripts\n - run [id]\n")
+print("Commands:\n - help\n - scripts\n - run [id]\n - exit\n")
 while True:
     command = input('> ')
-    if command.split(' ')[0] == 'scripts':
+    if len(command.rsplit(' ', 1)) > 1:
+        args = command.rsplit(' ', 1)[1]
+    command = command.rsplit(' ', 1)[0]
+    if command == 'scripts':
         print('\nScripts:')
         i = 1
         for script in scripts:
@@ -58,10 +67,15 @@ while True:
                 print(f' {i}) {script[:-3]} - {desc}')
                 i += 1
         print("")
-    elif command.split(' ')[0] == 'run':
+    elif command == 'exit':
+        exit(0)
+    elif command == 'help':
+        print("\nCommands:\n - help\n - scripts\n - run [id]\n - exit\n")
+    elif command == 'clear':
+        title()
+    elif command == 'run':
         try:
-            command = command.split(' ')[1]
-            script = scripts[len(scripts)-i+int(command)]
+            script = scripts[len(scripts)-i+int(args)]
             print(f'\nSelected {script}')
             params = {"token":token}
             iparams = __import__('scripts.'+script[:-3], fromlist=[None]).params
@@ -72,4 +86,4 @@ while True:
             __import__('scripts.'+script[:-3], fromlist=[None]).run(**params)
             print("\nDone!\n")
         except:
-            print("\nUnable to run. Try again?\n")
+            print("\nFailed.\n")
