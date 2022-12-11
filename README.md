@@ -10,7 +10,7 @@
 
 ## How do you use the scripts?
 
-While you can use each script indivdually in the [scripts directory](src/scripts/), the easiest way to use the scripts, is by using the launcher. The launcher is available in the "Releases" tab.
+While you can use each script indivdually in the [scripts directory](src/scripts/), the easiest way to use the scripts, is by using the launcher. The launcher is available in the [Releases](https://github.com/mov-ebx/discord-scripts/releases/latest) tab.
 
 All you need is Python installed and the necessary [requirements](src/requirements.txt). I wrote the scripts in Python 3.10.6, so I'd recommend you [install that version](https://www.python.org/downloads/release/python-3106/). However, later versions should work too.
 
@@ -24,7 +24,7 @@ Here's an example on how to integrate an example script in your project:
 
 ```py
 import scripts.example
-example.run("token", "other parameter")
+example.run("discord token", "other parameter")
 ```
 
 There is also a dictionary in all the scripts which has all the parameters, along with a string which has the description:

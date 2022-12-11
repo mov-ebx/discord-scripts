@@ -4,8 +4,8 @@ from colorama import Fore, Back, Style
 DIR = os.path.dirname(__file__)
 REPO = 'mov-ebx/discord-scripts'
 
-VERS = requests.get('https://raw.githubusercontent.com/'+REPO+'/Beta/VERSION').text
-SCRIPTS = requests.get('https://raw.githubusercontent.com/'+REPO+'/Beta/data/scripts.json').json()
+VERS = requests.get('https://raw.githubusercontent.com/'+REPO+'/main/VERSION').text
+SCRIPTS = requests.get('https://raw.githubusercontent.com/'+REPO+'/main/data/scripts.json').json()
 
 # Title
 print('Launcher version 0.1b'+Fore.RED+'''
@@ -22,7 +22,7 @@ def download_scripts():
     VER = open(DIR+'/version', 'r').readlines()[0]
     print('Downloading scripts!\n')
     for script in SCRIPTS:
-        url = 'https://raw.githubusercontent.com/'+REPO+'/Beta/src/scripts/'+script
+        url = 'https://raw.githubusercontent.com/'+REPO+'/main/src/scripts/'+script
         if os.path.exists(DIR+'/scripts/'+script) == False:
             print(' + Downloading '+script+'...')
             open(DIR+'/scripts/'+script, 'x').writelines(requests.get(url).text)
