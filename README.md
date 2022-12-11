@@ -1,5 +1,3 @@
-# This is the first commit, just so I can start writing the launcher. None of this is ready yet.
-
 <div align="center">
     <h1><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg"width="30px"><br>Discord Scripts</h1>
     <img src="https://i.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
@@ -18,18 +16,19 @@ All you need is Python installed and the necessary [requirements](src/requiremen
 
 ## How can I integrate the scripts in my projects?
 
-Each script has a function inside of it which can be called with the necessary parameters. Just make sure to follow the [license](LICENSE)!
+Each script has a function inside of it called "run" which can be called with the necessary parameters. Just make sure to follow the [license](LICENSE)!
 
 Here's an example on how to integrate an example script in your project:
 
 ```py
 import scripts.example
-example.example("token", "other parameter")
+example.run("token", "other parameter")
 ```
 
-There is also a dictionary in all the scripts of all the parameters:
+There is also a dictionary in all the scripts which has all the parameters, along with a string which has the description:
 
 ```py
 import scripts.example
-print(example.params)
+print(example.params) # Parameters
+print(example.desc) # Description
 ```
