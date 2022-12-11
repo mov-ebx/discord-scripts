@@ -1,5 +1,3 @@
-# This is the first commit, just so I can start writing the launcher. None of this is ready yet.
-
 <div align="center">
     <h1><img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg"width="30px"><br>Discord Scripts</h1>
     <img src="https://i.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
