@@ -52,7 +52,7 @@ except IndexError:
 
 # Command line
 scripts = os.listdir(DIR+'/scripts/')
-print("Commands:\n - help\n - scripts\n - run [id]\n - exit\n")
+print("Commands:\n - help\n - exit\n - clear\n - scripts\n - run [id]\n")
 while True:
     command = input('> ')
     if len(command.rsplit(' ', 1)) > 1:
